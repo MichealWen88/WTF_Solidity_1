@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.2 <0.9.0;
+pragma solidity >=0.8.19;
 
 contract ConstantImmutable{
     //constant在声明时就必须初始化且不可改变

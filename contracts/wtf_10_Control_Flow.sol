@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.2 <0.9.0;
+pragma solidity >=0.8.19;
 
 
 contract ControlFlow{
@@ -19,6 +19,35 @@ contract ControlFlow{
             sum += i;
         }
         return sum;
+    }
+
+
+    //插入排序  错误写法
+    function insertionSortWrong(uint[] memory array)public  pure returns(uint[] memory ) {
+        for (uint i=1;i < array.length;i++){
+            uint temp = array[i];
+            uint j = i-1;
+            while ((j>=0) && (temp < array[j])){
+                array[j+1] = array[j];
+                j--;  //如果j=0，则会报错
+            }
+            array[j+1] = temp;
+        }
+        return (array);
+    }
+
+    //插入排序
+    function insertionSort(uint[] memory array)public  pure returns(uint[] memory ) {
+        for (uint i=1;i < array.length;i++){
+            uint temp = array[i];
+            uint j = i;
+            while ((j>=1) && (temp < array[j-1])){
+                array[j] = array[j-1];
+                j--;
+            }
+            array[j] = temp;
+        }
+        return (array);
     }
     
 }
